@@ -1,7 +1,6 @@
 img {
   max-width:100%;
 }
-
 body {
   font-family: Verdana;
   background: linear-gradient(to right, lightgreen, teal);
@@ -72,7 +71,6 @@ main p {
   padding:1% 2%;
   font-size:1em;
 }
-
 footer {
   grid-area:footer;
   background:rgba(0,0,0,.2);
@@ -85,31 +83,60 @@ footer p {
   color:white;
   margin:0;
 }
-
-aside {
-  grid-area:aside;
+aside{
+  grid-area: aside;
   background:rgba(0,0,0,.2);
   padding:5px;
 }
+  aside li {
+    color: navy;
+    padding: 10px 0;
+  }
+  aside a {
+    color: white;
+    font-size: 20px;
+  }
+  aside a:hover{
+    color:navy;
+  }
+  aside h2 {
+    color:navy;
+    text-align:center;
+    padding:5px 0;
+  }
+  article{
+  background:rgba(0,0,0,.2);
+  padding:5px;
+  }
+  .top{
+    grid-area: top;
+  background:rgba(0,0,0,.2);
+  padding:5px;
+  }
+    .middle{
+    grid-area: middle;
+  background:rgba(0,0,0,.2);
+  padding:5px;
+  }
+  .bottom{
+    grid-area: bottom;
+  background:rgba(0,0,0,.2);
+  padding:5px;
+  }
+  article h2{
+    text-align:center;
+    color:navy;
+  }
+  article p {
+    color: white;
+    text-align: left;
     
-aside ul {
-}
-
-aside li {
-  color:navy;
-  padding:10px 5px;
+  }
+  .travelpic {
+    margin:auto;
   }
 
-aside a {
-  color:white;
-  
-}
-
-aside h2{
-  color:navy;
-}
-
-/*-----------------------Phone Media Query------------------------*/
+ /*---------------------------Mobile Layout Styles----------------------------*/
 .container1 { /*for index.html*/
   display: grid;
   grid-template-columns:100%;
@@ -120,6 +147,20 @@ aside h2{
     "nav"
     "main"
     "aside"
+    "footer";
+    }
+    .container2 { /*for blog.html*/
+  display: grid;
+  grid-template-columns:100%;
+  grid-gap:.5em;
+  margin:1%;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "top"
+    "middle"
+    "bottom"
     "footer";
     }
 
@@ -160,6 +201,16 @@ aside h2{
     "aside aside"
     "footer footer";
     }
+.container2 { /*for blog.html*/
+  grid-template-columns:auto 1fr;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "top top"
+    "middle middle"
+    "bottom bottom"
+    "footer footer";
+    }
 
 
 /* Below will change from hamburger menu to side navigation*/
@@ -190,5 +241,15 @@ aside h2{
     "nav main aside"
     "footer footer footer";
     }
+.container2 { /*for blog.html*/
+  grid-template-columns:auto 1fr 1.5fr;
+  grid-template-areas:
+    "header header header"
+    "nav main top"
+    "nav main middle"
+    "nav main bottom"
+    "footer footer footer";
+    }
+	
 
 	}
